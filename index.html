@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kerja Profesi</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/images/upj.webp" alt="Logo">
+        </a>
+        <div class="title">
+            <h1>Kerja Profesi</h1>
+            <h2>Website Profil Kelompok</h2>
+        </div>
+        <div class="admin-btn">
+            <a href="admin.html">Admin</a>
+        </div>
+    </header>
+    
+    <!-- Person Selection moved here -->
+    <div class="person-selector">
+        <button class="person-btn active" data-person="kaila">Kaila</button>
+        <button class="person-btn" data-person="ezra">Ezra</button>
+        <button class="person-btn" data-person="faiq">Faiq</button>
+    </div>
+    
+    <div class="main-content">
+        <div class="nav-section">
+            <nav>
+                <li><a class="nav-link active" data-target="biodata">Biodata</a></li>
+                <li><a class="nav-link" data-target="pendidikan">Pendidikan</a></li>
+                <li><a class="nav-link" data-target="pengalaman">Pengalaman</a></li>
+                <li><a class="nav-link" data-target="keahlian">Keahlian</a></li>
+            </nav>
+            
+            <section class="content-section-kaila">
+                <div id="biodata-kaila" class="content-block">
+                    <h2>Biodata</h2>
+                    <div class="biodata-content">
+                        <div class="biodata-info">
+                            <p>NIM: 2024081003</p>
+                            <p>Tanggal Lahir: 16 Juni 2005</p>
+                            <p>Nama: Kaila Zanita</p>
+                            <p>Program Studi: Sistem Informasi</p>
+                        </div>
+                        <div class="biodata-image">
+                            <img src="assets/images/kaila.webp" alt="Kaila Zanita">
+                        </div>
+                    </div>
+                </div>
+                <div id="pendidikan-kaila" class="content-block" style="display:none;">
+                    <h2>Pendidikan</h2>
+                    <ul>
+                        <li>SD Islam Raudhah (2011-2017)</li>
+                        <li>SMP Negeri 11 Kota Tangerang Selatan (2017-2020)</li>
+                        <li>SMA Negeri 11 Kota Tangerang Selatan (2020-2021)</li>
+                        <li>SMA Negeri 1 Cibungbulang (2021-2023)</li>
+                        <li>Universitas Pembangunan Jaya (2024-Sekarang)</li>
+                    </ul>
+                </div>
+                <div id="pengalaman-kaila" class="content-block" style="display:none;">
+                    <h2>Pengalaman</h2>
+                    <ul>
+                        <li>Divisi Riset dan Pengembangan - HIMASIF 2025</li>
+                        <li>Divisi Konsumsi dan Danus - GIDHUB 2025</li>
+                        <li>Bendahara - ECHO 2025</li>
+                        <li>Mentor - Pelatihan Dasar Python 2025</li>
+                        <li>Bendahara - Prodi Gathering 2025</li>
+                    </ul>
+                </div>
+                <div id="keahlian" class="content-block" style="display:none;">
+                    <h2>Keahlian</h2>
+                    <ul>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Basic Python</li>
+                        <li>HTML & CSS</li>
+                        <li>Basic Javascript</li>
+                        <li>Basic Github</li>
+                        <li>Figma</li>
+                        <li>Basic Laravel</li>
+                        <li>Basic ReactJS</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="content-section-ezra" style="display:none;">
+                <div id="biodata-ezra" class="content-block">
+                    <h2>Biodata</h2>
+                    <div class="biodata-content">
+                        <div class="biodata-info">
+                            <p>NIM: 2024081018</p>
+                            <p>Tanggal Lahir: 16 Juni 2006</p>
+                            <p>Nama: Ezra Jelianti Silaban</p>
+                            <p>Program Studi: Sistem Informasi</p>
+                        </div>
+                        <div class="biodata-image">
+                            <img src="assets/images/ezra.webp" alt="Ezra Jelianti Silaban">
+                        </div>
+                    </div>
+                </div>
+                <div id="pendidikan-ezra" class="content-block" style="display:none;">
+                    <h2>Pendidikan</h2>
+                    <ul>
+                        <li>SMP Negeri 4 Kota Tangerang Selatan (2018-2021)</li>
+                        <li>SMA Negeri 1 Kota Tangerang Selatan (2021-2024)</li>
+                        <li>Universitas Pembangunan Jaya (2024-Sekarang)</li>
+                    </ul>
+                </div>
+                <div id="pengalaman-ezra" class="content-block" style="display:none;">
+                    <h2>Pengalaman</h2>
+                    <ul>
+                        <li>Wakil Ketua Departemen PSDM - HIMASIF 2025</li>
+                        <li>Mentor - Pelatihan Dasar Python 2025</li>
+                        <li>Divisi Acara - PRIMA 2025</li>
+                        <li>Ketua - SYNTAX 2025</li>
+                        <li>Ketua - Composting Adventure 2025</li>
+                    </ul>
+                </div>
+                <div id="keahlian-ezra" class="content-block" style="display:none;">
+                    <h2>Keahlian</h2>
+                    <ul>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Google (Docs, Spreadsheet, Slides)</li>
+                        <li>Public Speaking</li>
+                        <li>Presentation</li>
+                        <li>Team Coordination</li>
+                        <li>Project Planning</li>
+                        <li>Creative Leadership</li>
+                        <li>Research</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="content-section-faiq" style="display:none;">
+                <div id="biodata-faiq" class="content-block">
+                    <h2>Biodata</h2>
+                    <div class="biodata-content">
+                        <div class="biodata-info">
+                            <p>NIM: 2024081006</p>
+                            <p>Tanggal Lahir: 16 Juli 2005</p>
+                            <p>Nama: Faiq Muhammad</p>
+                            <p>Program Studi: Sistem Informasi</p>
+                        </div>
+                        <div class="biodata-image">
+                            <img src="assets/images/faiq.webp" alt="Faiq Muhammad">
+                        </div>
+                    </div>
+                </div>
+                <div id="pendidikan-faiq" class="content-block" style="display:none;">
+                    <h2>Pendidikan</h2>
+                    <ul>
+                        <li>SD Al-Fath Cirendeu (2011-2017)</li>
+                        <li>SMP Pesat Bogor (2017-2020)</li>
+                        <li>SMAS Waskito Tangerang Selatan (2020-2023)</li>
+                        <li>Universitas Pembangunan Jaya (2024-Sekarang)</li>
+                    </ul>
+                </div>
+                <div id="pengalaman-faiq" class="content-block" style="display:none;">
+                    <h2>Pengalaman</h2>
+                    <ul>
+                        <li>Divisi Kewirausahaan - HIMASIF 2025</li>
+                        <li>Mentor - PRIMA 2025</li>
+                        <li>Divisi Sponsorhip - GIDHUB 2025</li>
+                        <li>Mentor Pembekalan Microsoft 365 - SYNTAX 2025</li>
+                        <li>Mentor - Pelatihan Dasar Python 2025</li>
+                        <li>Divisi Acara - COMSIT 2025</li>
+                        <li>Divisi Acara - DISCUSSIF 2025</li>
+                        <li>Divisi Acara - Concordia 2025</li>
+                        <li>CTO - BONE 2024</li>
+                        <li>Field - UPJ Student Ambassador 2024</li>
+                    </ul>
+                </div>
+                <div id="keahlian-faiq" class="content-block" style="display:none;">
+                    <h2>Keahlian</h2>
+                    <ul>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Figma</li>
+                        <li>Bootstrap</li>
+                        <li>HTML & CSS</li>
+                        <li>Javascript</li>
+                        <li>Github</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <aside>
+            <div class="Hobi-Kontak">
+            <h2>Hobi</h2>
+                <div class="hobi-kaila">
+                    <ul>
+                        <li>Menonton Film dan Series</li>
+                        <li>Bermain Video Game</li>
+                        <li>Belajar Bahasa</li>
+                        <li>Coding</li>
+                        <li>Mendengarkan Musik</li>
+                    </ul>
+                </div>
+                <div class="hobi-ezra" style="display:none;">
+                    <ul>
+                        <li>Membaca buku</li>
+                        <li>Menulis Puisi</li>
+                        <li>Tidur</li>
+                    </ul>
+                </div>
+                <div class="hobi-faiq" style="display:none;">
+                    <ul>
+                        <li>Otomotif</li>
+                        <li>Mobil</li>
+                        <li>Tech</li>
+                        <li>Bermain Basket</li>
+                    </ul>
+                </div>
+                <h2>Kontak</h2>
+                <div class="kontak-kaila">
+                    <p>Instagram: @kailazanita</p>
+                    <p>Github: @kailazanita</p>
+                </div>
+                <div class="kontak-ezra" style="display:none;">
+                    <p>Instagram: @douciez</p>
+                    <p>Github: @ezrajeliantisilaban</p>
+                </div>
+                <div class="kontak-faiq" style="display:none;">
+                    <p>Instagram: @qiafaf</p>
+                    <p>Github: @qiafaf</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2024 Kelompok Kerja Profesi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const personBtns = document.getElementsByClassName('person-btn');
+            const navLinks = document.getElementsByClassName('nav-link');
+            
+            // Set default active states
+            if (personBtns.length > 0) personBtns[0].classList.add('active');
+            if (navLinks.length > 0) navLinks[0].classList.add('active');
+            
+            // Person button clicks
+            for (let i = 0; i < personBtns.length; i++) {
+                personBtns[i].addEventListener('click', function() {
+                    // Remove active from all person buttons
+                    for (let j = 0; j < personBtns.length; j++) {
+                        personBtns[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    const allSections = ['content-section-kaila', 'content-section-ezra', 'content-section-faiq'];
+                    for (let k = 0; k < allSections.length; k++) {
+                        const section = document.getElementsByClassName(allSections[k])[0];
+                        if (section) section.style.display = 'none';
+                    }
+                    
+                    // Show selected person's section
+                    const selectedPerson = this.getAttribute('data-person');
+                    const selectedSection = document.getElementsByClassName('content-section-' + selectedPerson)[0];
+                    if (selectedSection) selectedSection.style.display = 'block';
+                    
+                    // Update aside content
+                    const allHobi = ['hobi-kaila', 'hobi-ezra', 'hobi-faiq'];
+                    const allKontak = ['kontak-kaila', 'kontak-ezra', 'kontak-faiq'];
+                    
+                    for (let m = 0; m < allHobi.length; m++) {
+                        const hobi = document.getElementsByClassName(allHobi[m])[0];
+                        const kontak = document.getElementsByClassName(allKontak[m])[0];
+                        if (hobi) hobi.style.display = 'none';
+                        if (kontak) kontak.style.display = 'none';
+                    }
+                    
+                    const selectedHobi = document.getElementsByClassName('hobi-' + selectedPerson)[0];
+                    const selectedKontak = document.getElementsByClassName('kontak-' + selectedPerson)[0];
+                    if (selectedHobi) selectedHobi.style.display = 'block';
+                    if (selectedKontak) selectedKontak.style.display = 'block';
+                    
+                    // Show current section for new person
+                    const activeNavLink = document.getElementsByClassName('nav-link active')[0];
+                    if (activeNavLink) {
+                        const currentSection = activeNavLink.getAttribute('data-target');
+                        const allContent = document.getElementsByClassName('content-block');
+                        for (let n = 0; n < allContent.length; n++) {
+                            allContent[n].style.display = 'none';
+                        }
+                        
+                        const targetId = currentSection === 'keahlian' && selectedPerson === 'kaila' ? 'keahlian' : currentSection + '-' + selectedPerson;
+                        const targetContent = document.getElementById(targetId);
+                        if (targetContent) targetContent.style.display = 'block';
+                    }
+                });
+            }
+            
+            // Navigation link clicks
+            for (let i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active from all nav links
+                    for (let j = 0; j < navLinks.length; j++) {
+                        navLinks[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    
+                    // Hide all content blocks
+                    const allContent = document.getElementsByClassName('content-block');
+                    for (let k = 0; k < allContent.length; k++) {
+                        allContent[k].style.display = 'none';
+                    }
+                    
+                    // Show selected content for current person
+                    const activePerson = document.getElementsByClassName('person-btn active')[0];
+                    if (activePerson) {
+                        const currentPerson = activePerson.getAttribute('data-person');
+                        const targetSection = this.getAttribute('data-target');
+                        const targetId = targetSection === 'keahlian' && currentPerson === 'kaila' ? 'keahlian' : targetSection + '-' + currentPerson;
+                        const targetContent = document.getElementById(targetId);
+                        if (targetContent) targetContent.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
