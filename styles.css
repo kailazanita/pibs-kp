@@ -41,6 +41,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 header img {
@@ -82,7 +83,8 @@ header img {
 }
 
 .admin-btn {
-    margin-left: auto;
+    margin-left: 0; /* Remove auto margin */
+    order: 999; /* Highest order to ensure rightmost position */
 }
 
 .admin-btn a {
@@ -106,6 +108,46 @@ header img {
     box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
 }
 
+/* Person Selector Styles - Now part of header and centered */
+.person-selector {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    order: 3; /* Position before admin button but after title */
+    position: absolute; /* Position absolutely to center */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+.person-btn {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid rgba(139, 0, 0, 0.4);
+    background: transparent;
+    color: #2c3e50;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600, 'wdth' 90;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    min-width: 80px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.person-btn:hover {
+    background: rgba(139, 0, 0, 0.1);
+    transform: translateY(-1px);
+    border-color: #8b0000;
+}
+
+.person-btn.active {
+    background: #8b0000;
+    color: white;
+    border-color: #8b0000;
+    box-shadow: 0 2px 10px rgba(139, 0, 0, 0.3);
+}
+
 /* Main Content Layout */
 .main-content {
     display: flex;
@@ -121,50 +163,6 @@ header img {
 .nav-section {
     display: flex;
     flex: 3;
-}
-
-/* Person Selector Styles - Now positioned under header */
-.person-selector {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 99;
-}
-
-.person-btn {
-    padding: 0.8rem 2rem;
-    border: 2px solid rgba(139, 0, 0, 0.4);
-    background: transparent;
-    color: #2c3e50;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 700;
-    font-variation-settings: 'wght' 700, 'wdth' 90;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    min-width: 120px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.person-btn:hover {
-    background: rgba(139, 0, 0, 0.1);
-    transform: translateY(-2px);
-    border-color: #8b0000;
-}
-
-.person-btn.active {
-    background: #8b0000;
-    color: white;
-    border-color: #8b0000;
-    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
 }
 
 /* Navigation Styles */
@@ -557,27 +555,79 @@ footer {
 
 /* Landscape Tablet View */
 @media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    header img {
+        height: 50px;
+        width: 50px;
+        order: 1;
+    }
+    
+    .title {
+        order: 2;
+        margin-left: 0.5rem;
+        text-align: left;
+        flex-shrink: 1;
+    }
+    
+    .title h1 {
+        font-size: 1.4rem;
+    }
+    
+    .title h2 {
+        font-size: 0.8rem;
+    }
+    
+    .person-selector {
+        order: 3;
+        gap: 0.4rem;
+        flex-shrink: 0;
+    }
+    
+    .person-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        min-width: 60px;
+    }
+    
+    .admin-btn {
+        order: 4;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    
+    .admin-btn a {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
     body {
         height: 100vh;
         overflow: hidden;
     }
 
     .main-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack nav-section and aside vertically */
         height: auto;
         min-height: auto;
         flex: 1;
         margin: 1rem;
-        margin-top: 130px; /* Adjust based on header + person selector height */
-        margin-bottom: 60px; /* Adjust based on footer height */
+        margin-top: 20px;
+        margin-bottom: 60px;
         overflow-y: auto;
-        height: calc(100vh - 190px); /* Adjust total height */
+        height: calc(100vh - 80px);
     }
     
     .nav-section {
-        flex-direction: row;
-        min-height: 60vh;
+        flex-direction: row; /* Nav and section side by side */
+        min-height: 60vh; /* Give more height to nav section */
         height: auto;
+        margin-bottom: 1rem; /* Add space before aside */
     }
     
     nav {
@@ -590,22 +640,15 @@ footer {
         height: auto;
         overflow-y: visible;
     }
-    
-    .person-selector {
-        padding: 1rem 2rem;
-        position: fixed;
-        top: 70px; /* Adjust based on header height */
-        left: 0;
-        right: 0;
-        z-index: 99;
-    }
 
+    /* Aside goes below nav-section, full width */
     aside {
         height: auto;
         overflow-y: visible;
-        width: 100%;
+        width: 100%; /* Full width */
         min-width: auto;
         flex-shrink: 1;
+        order: 2; /* Ensure it appears after nav-section */
     }
 
     footer {
