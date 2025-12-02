@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <title>Kerja Profesi</title>
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="assets/images/upj.webp" alt="Logo">
-        </a>
-        <div class="title">
-            <h1>Kerja Profesi</h1>
-            <h2>Website Profil Kelompok</h2>
+        <!-- Top row: Logo, Title, Admin -->
+        <div class="header-top">
+            <a href="index.html">
+                <img src="assets/images/upj.webp" alt="Logo">
+            </a>
+            <div class="title">
+                <h1>Kerja Profesi</h1>
+                <h2>Website Profil Kelompok</h2>
+            </div>
+            <div class="admin-btn">
+                <a href="http://localhost/pibs-kelompok/adminkp.php">Admin</a>
+            </div>
         </div>
         
-        <!-- Person selector moved into header -->
+        <!-- Bottom row: Person selector -->
         <div class="person-selector">
             <button class="person-btn active" data-person="kaila">Kaila</button>
             <button class="person-btn" data-person="ezra">Ezra</button>
             <button class="person-btn" data-person="faiq">Faiq</button>
-        </div>
-        
-        <div class="admin-btn">
-            <a href="http://localhost/pibs-kelompok/adminkp.php">Admin</a>
         </div>
     </header>
     
@@ -72,7 +74,7 @@
                         <li>Bendahara - Prodi Gathering 2025</li>
                     </ul>
                 </div>
-                <div id="keahlian-kaila" class="content-block" style="display:none;">
+                <div id="keahlian" class="content-block" style="display:none;">
                     <h2>Keahlian</h2>
                     <ul>
                         <li>Microsoft Office (Word, Excel, PowerPoint)</li>
@@ -288,7 +290,7 @@
                             allContent[n].style.display = 'none';
                         }
                         
-                        const targetId = currentSection + '-' + selectedPerson;
+                        const targetId = currentSection === 'keahlian' && selectedPerson === 'kaila' ? 'keahlian' : currentSection + '-' + selectedPerson;
                         const targetContent = document.getElementById(targetId);
                         if (targetContent) targetContent.style.display = 'block';
                     }
@@ -317,7 +319,7 @@
                     if (activePerson) {
                         const currentPerson = activePerson.getAttribute('data-person');
                         const targetSection = this.getAttribute('data-target');
-                        const targetId = targetSection + '-' + currentPerson;
+                        const targetId = targetSection === 'keahlian' && currentPerson === 'kaila' ? 'keahlian' : targetSection + '-' + currentPerson;
                         const targetContent = document.getElementById(targetId);
                         if (targetContent) targetContent.style.display = 'block';
                     }

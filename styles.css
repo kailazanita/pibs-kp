@@ -33,15 +33,21 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0 2rem; /* Remove bottom padding */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0; /* Remove gap between rows */
     position: sticky;
     top: 0;
     z-index: 100;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Top row of header */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 header img {
@@ -59,7 +65,7 @@ header img {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    margin-left: 1rem;
+    margin-left: 0.9rem;
 }
 
 .title h1 {
@@ -83,8 +89,7 @@ header img {
 }
 
 .admin-btn {
-    margin-left: 0; /* Remove auto margin */
-    order: 999; /* Highest order to ensure rightmost position */
+    margin-left: auto;
 }
 
 .admin-btn a {
@@ -100,6 +105,8 @@ header img {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.9rem;
+    min-width: 80px; /* Set minimum width to ensure consistency */
+    text-align: center; /* Center the text within the button */
 }
 
 .admin-btn a:hover {
@@ -108,15 +115,17 @@ header img {
     box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
 }
 
-/* Person Selector Styles - Now part of header and centered */
+/* Person Selector Styles - Bottom row of header */
 .person-selector {
     display: flex;
     gap: 0.8rem;
     align-items: center;
-    order: 3; /* Position before admin button but after title */
-    position: absolute; /* Position absolutely to center */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem 0;
+    margin: 0 -2rem;
+    background: rgba(139, 0, 0, 0.05);
+    border-top: none; /* Remove the border line */
 }
 
 .person-btn {
@@ -1008,13 +1017,11 @@ body.admin-page {
     min-height: 100vh;
     padding-top: 0;
     background: #660000;
+    margin: 0 !important; /* Remove any body margin */
+    padding: 0 !important; /* Remove any body padding */
 }
 
-body.admin-page html {
-    height: auto !important;
-    overflow: visible !important;
-}
-
+/* Fix admin page header - use simple single row layout */
 body.admin-page header {
     position: fixed;
     top: 0;
@@ -1025,6 +1032,45 @@ body.admin-page header {
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(139, 0, 0, 0.1);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem; /* Match main page padding exactly */
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem; /* Match main page gap exactly */
+}
+
+/* Ensure admin page logo matches main page exactly */
+body.admin-page header img {
+    height: 70px !important; /* Match main page logo size exactly */
+    width: 70px !important;
+}
+
+/* Ensure title spacing matches main page exactly in all cases */
+body.admin-page .title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-left: 0.9rem !important; /* Match desktop spacing */
+}
+
+/* Hide person selector on admin page */
+body.admin-page .person-selector {
+    display: none !important;
+}
+
+/* Ensure header-top acts normally on admin page */
+body.admin-page .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+}
+
+body.admin-page html {
+    height: auto !important;
+    overflow: visible !important;
 }
 
 /* Add top margin to admin container to account for fixed header */
@@ -1087,6 +1133,23 @@ body.admin-page .main-content {
     
     body.admin-page .table-section {
         margin-bottom: 20px; /* Reduced from 80px */
+    }
+}
+
+/* Override landscape tablet spacing for admin page */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body.admin-page header {
+        padding: 1rem 1.5rem; /* Match landscape tablet padding */
+        gap: 0.8rem; /* Match landscape tablet gap */
+    }
+    
+    body.admin-page header img {
+        height: 50px !important; /* Match landscape tablet logo size */
+        width: 50px !important;
+    }
+    
+    body.admin-page .title {
+        margin-left: 0.5rem !important; /* Match landscape tablet spacing exactly */
     }
 }
 

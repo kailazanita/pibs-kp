@@ -83,7 +83,7 @@ $result = $conn->query("SELECT * FROM mahasiswa ORDER BY nim");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Kelola Data Mahasiswa</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body class="admin-page">
     <header>
@@ -195,6 +195,17 @@ $result = $conn->query("SELECT * FROM mahasiswa ORDER BY nim");
         <p>&copy; 2024 Kelompok Kerja Profesi. All rights reserved.</p>
     </footer>
     
+    <script>
+        // Auto-hide alerts after 3 seconds
+        setTimeout(function() {
+            const alerts = document.querySelectorAll('script');
+            alerts.forEach(alert => {
+                if (alert.textContent.includes('alert')) {
+                    alert.style.display = 'none';
+                }
+            });
+        }, 3000);
+    </script>
 </body>
 </html>
 
