@@ -195,17 +195,6 @@ $result = $conn->query("SELECT * FROM mahasiswa ORDER BY nim");
         <p>&copy; 2024 Kelompok Kerja Profesi. All rights reserved.</p>
     </footer>
     
-    <script>
-        // Auto-hide alerts after 3 seconds
-        setTimeout(function() {
-            const alerts = document.querySelectorAll('script');
-            alerts.forEach(alert => {
-                if (alert.textContent.includes('alert')) {
-                    alert.style.display = 'none';
-                }
-            });
-        }, 3000);
-    </script>
 </body>
 </html>
 
