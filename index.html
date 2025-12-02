@@ -71,7 +71,7 @@
                         <li>Bendahara - Prodi Gathering 2025</li>
                     </ul>
                 </div>
-                <div id="keahlian" class="content-block" style="display:none;">
+                <div id="keahlian-kaila" class="content-block" style="display:none;">
                     <h2>Keahlian</h2>
                     <ul>
                         <li>Microsoft Office (Word, Excel, PowerPoint)</li>
@@ -287,7 +287,7 @@
                             allContent[n].style.display = 'none';
                         }
                         
-                        const targetId = currentSection === 'keahlian' && selectedPerson === 'kaila' ? 'keahlian' : currentSection + '-' + selectedPerson;
+                        const targetId = currentSection + '-' + selectedPerson;
                         const targetContent = document.getElementById(targetId);
                         if (targetContent) targetContent.style.display = 'block';
                     }
@@ -316,7 +316,7 @@
                     if (activePerson) {
                         const currentPerson = activePerson.getAttribute('data-person');
                         const targetSection = this.getAttribute('data-target');
-                        const targetId = targetSection === 'keahlian' && currentPerson === 'kaila' ? 'keahlian' : targetSection + '-' + currentPerson;
+                        const targetId = targetSection + '-' + currentPerson;
                         const targetContent = document.getElementById(targetId);
                         if (targetContent) targetContent.style.display = 'block';
                     }
